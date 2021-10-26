@@ -19,6 +19,8 @@ public partial class MainWindow
 
 	private global::Gtk.Action AboutAction;
 
+	private global::Gtk.Action DonationsAction;
+
 	private global::Gtk.VBox vbox1;
 
 	private global::Gtk.MenuBar menubar1;
@@ -48,8 +50,6 @@ public partial class MainWindow
 	private global::Gtk.Button button1;
 
 	private global::Gtk.Button button2;
-
-	private global::Gtk.HScale hscale3;
 
 	private global::Gtk.VBox vbox2;
 
@@ -88,6 +88,9 @@ public partial class MainWindow
 		this.AboutAction = new global::Gtk.Action("AboutAction", global::Mono.Unix.Catalog.GetString("About"), null, null);
 		this.AboutAction.ShortLabel = global::Mono.Unix.Catalog.GetString("About");
 		w1.Add(this.AboutAction, null);
+		this.DonationsAction = new global::Gtk.Action("DonationsAction", global::Mono.Unix.Catalog.GetString("Donations"), null, null);
+		this.DonationsAction.ShortLabel = global::Mono.Unix.Catalog.GetString("Donations");
+		w1.Add(this.DonationsAction, null);
 		this.UIManager.InsertActionGroup(w1, 0);
 		this.AddAccelGroup(this.UIManager.AccelGroup);
 		this.Name = "MainWindow";
@@ -98,7 +101,7 @@ public partial class MainWindow
 		this.vbox1.Name = "vbox1";
 		this.vbox1.Spacing = 6;
 		// Container child vbox1.Gtk.Box+BoxChild
-		this.UIManager.AddUiFromString(@"<ui><menubar name='menubar1'><menu name='FileAction' action='FileAction'><menuitem name='OpenAction' action='OpenAction'/><menuitem name='QuitAction' action='QuitAction'/></menu><menu name='SettingsAction' action='SettingsAction'><menuitem name='HideMenuBarAction' action='HideMenuBarAction'/></menu><menu name='HelpAction' action='HelpAction'><menuitem name='AboutAction' action='AboutAction'/></menu></menubar></ui>");
+		this.UIManager.AddUiFromString(@"<ui><menubar name='menubar1'><menu name='FileAction' action='FileAction'><menuitem name='OpenAction' action='OpenAction'/><menuitem name='QuitAction' action='QuitAction'/></menu><menu name='SettingsAction' action='SettingsAction'><menuitem name='HideMenuBarAction' action='HideMenuBarAction'/></menu><menu name='HelpAction' action='HelpAction'><menuitem name='AboutAction' action='AboutAction'/><menuitem name='DonationsAction' action='DonationsAction'/></menu></menubar></ui>");
 		this.menubar1 = ((global::Gtk.MenuBar)(this.UIManager.GetWidget("/menubar1")));
 		this.menubar1.Name = "menubar1";
 		this.vbox1.Add(this.menubar1);
@@ -220,30 +223,17 @@ public partial class MainWindow
 		w12.Position = 1;
 		w12.Expand = false;
 		w12.Fill = false;
-		// Container child hbox5.Gtk.Box+BoxChild
-		this.hscale3 = new global::Gtk.HScale(null);
-		this.hscale3.CanFocus = true;
-		this.hscale3.Name = "hscale3";
-		this.hscale3.Adjustment.Upper = 100D;
-		this.hscale3.Adjustment.PageIncrement = 10D;
-		this.hscale3.Adjustment.StepIncrement = 1D;
-		this.hscale3.DrawValue = true;
-		this.hscale3.Digits = 0;
-		this.hscale3.ValuePos = ((global::Gtk.PositionType)(2));
-		this.hbox5.Add(this.hscale3);
-		global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(this.hbox5[this.hscale3]));
-		w13.Position = 2;
 		this.hbox4.Add(this.hbox5);
-		global::Gtk.Box.BoxChild w14 = ((global::Gtk.Box.BoxChild)(this.hbox4[this.hbox5]));
-		w14.Position = 1;
+		global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(this.hbox4[this.hbox5]));
+		w13.Position = 1;
 		this.hbox1.Add(this.hbox4);
-		global::Gtk.Box.BoxChild w15 = ((global::Gtk.Box.BoxChild)(this.hbox1[this.hbox4]));
-		w15.Position = 2;
+		global::Gtk.Box.BoxChild w14 = ((global::Gtk.Box.BoxChild)(this.hbox1[this.hbox4]));
+		w14.Position = 2;
 		this.vbox1.Add(this.hbox1);
-		global::Gtk.Box.BoxChild w16 = ((global::Gtk.Box.BoxChild)(this.vbox1[this.hbox1]));
-		w16.Position = 1;
-		w16.Expand = false;
-		w16.Fill = false;
+		global::Gtk.Box.BoxChild w15 = ((global::Gtk.Box.BoxChild)(this.vbox1[this.hbox1]));
+		w15.Position = 1;
+		w15.Expand = false;
+		w15.Fill = false;
 		// Container child vbox1.Gtk.Box+BoxChild
 		this.vbox2 = new global::Gtk.VBox();
 		this.vbox2.Name = "vbox2";
@@ -254,38 +244,38 @@ public partial class MainWindow
 		this.scrolledwindow1.Name = "scrolledwindow1";
 		this.scrolledwindow1.ShadowType = ((global::Gtk.ShadowType)(1));
 		// Container child scrolledwindow1.Gtk.Container+ContainerChild
-		global::Gtk.Viewport w17 = new global::Gtk.Viewport();
-		w17.ShadowType = ((global::Gtk.ShadowType)(0));
+		global::Gtk.Viewport w16 = new global::Gtk.Viewport();
+		w16.ShadowType = ((global::Gtk.ShadowType)(0));
 		// Container child GtkViewport.Gtk.Container+ContainerChild
 		this.notebook1 = new global::Gtk.Notebook();
 		this.notebook1.CanFocus = true;
 		this.notebook1.Name = "notebook1";
 		this.notebook1.CurrentPage = 0;
 		// Notebook tab
-		global::Gtk.Label w18 = new global::Gtk.Label();
-		w18.Visible = true;
-		this.notebook1.Add(w18);
+		global::Gtk.Label w17 = new global::Gtk.Label();
+		w17.Visible = true;
+		this.notebook1.Add(w17);
 		this.label1 = new global::Gtk.Label();
 		this.label1.Name = "label1";
 		this.label1.LabelProp = global::Mono.Unix.Catalog.GetString("page1");
-		this.notebook1.SetTabLabel(w18, this.label1);
+		this.notebook1.SetTabLabel(w17, this.label1);
 		this.label1.ShowAll();
-		w17.Add(this.notebook1);
-		this.scrolledwindow1.Add(w17);
+		w16.Add(this.notebook1);
+		this.scrolledwindow1.Add(w16);
 		this.vbox2.Add(this.scrolledwindow1);
-		global::Gtk.Box.BoxChild w21 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.scrolledwindow1]));
-		w21.Position = 0;
+		global::Gtk.Box.BoxChild w20 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.scrolledwindow1]));
+		w20.Position = 0;
 		// Container child vbox2.Gtk.Box+BoxChild
 		this.hseparator1 = new global::Gtk.HSeparator();
 		this.hseparator1.Name = "hseparator1";
 		this.vbox2.Add(this.hseparator1);
-		global::Gtk.Box.BoxChild w22 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.hseparator1]));
-		w22.Position = 1;
-		w22.Expand = false;
-		w22.Fill = false;
+		global::Gtk.Box.BoxChild w21 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.hseparator1]));
+		w21.Position = 1;
+		w21.Expand = false;
+		w21.Fill = false;
 		this.vbox1.Add(this.vbox2);
-		global::Gtk.Box.BoxChild w23 = ((global::Gtk.Box.BoxChild)(this.vbox1[this.vbox2]));
-		w23.Position = 2;
+		global::Gtk.Box.BoxChild w22 = ((global::Gtk.Box.BoxChild)(this.vbox1[this.vbox2]));
+		w22.Position = 2;
 		this.Add(this.vbox1);
 		if ((this.Child != null))
 		{
@@ -299,6 +289,7 @@ public partial class MainWindow
 		this.QuitAction.Activated += new global::System.EventHandler(this.Quit);
 		this.HideMenuBarAction.Activated += new global::System.EventHandler(this.HideMenuBar);
 		this.AboutAction.Activated += new global::System.EventHandler(this.About);
+		this.DonationsAction.Activated += new global::System.EventHandler(this.Donations);
 		this.buttonBack.Clicked += new global::System.EventHandler(this.GoBack);
 		this.buttonForward.Clicked += new global::System.EventHandler(this.GoForward);
 		this.button4.Clicked += new global::System.EventHandler(this.Reload);

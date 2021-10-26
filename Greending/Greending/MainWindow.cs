@@ -18,8 +18,10 @@ public partial class MainWindow : Gtk.Window
     string[] args;
     //is a global variable bcs it doesn't want to work correctly
     Entry entry = new Entry();
+    Gtk.Window donate_dialog = new Gtk.Window("Donations");
     Gtk.Window dialog_change = new Gtk.Window("Select search engine");
     WebKit2.Settings settings = new WebKit2.Settings();
+    Button donationCancelButton = new Button("Cancel");
     Label labelTitle = new Label("Tab 1");
 
     //We begin the Main Window (Now with 30% more stupid comments)
@@ -50,7 +52,7 @@ public partial class MainWindow : Gtk.Window
         settings.EnableSmoothScrolling = true;
 
         //入 webView
-         
+
         webView.Add(new WebView());
         //download.Destination = working_dir + "downloads";
         if (!loadpages)
@@ -68,7 +70,7 @@ public partial class MainWindow : Gtk.Window
             }
             //Put the WebView into the VBox1
             notebook1.InsertPage(webView[0], labelTitle, 0);
-            
+
             label1.Text = "Tab 1";
             webView[0].Show();
             notebook1.RemovePage(1);
@@ -117,12 +119,12 @@ public partial class MainWindow : Gtk.Window
     {
         string[] result = fileLines;
         string tmp = "";
-        for(int i = 0; i < result.Length; i++)
+        for (int i = 0; i < result.Length; i++)
         {
             tmp = "";
-            for(int j = 0; j < result[i].Length; j++)
+            for (int j = 0; j < result[i].Length; j++)
             {
-                if(result[i][j] == '#')
+                if (result[i][j] == '#')
                 {
                     break;
                 }
@@ -155,7 +157,7 @@ public partial class MainWindow : Gtk.Window
     {   //Dis code works for 99% of cases. For di otha ones, fucc off
         if (entry1.Text.Contains(".") && (entry1.Text.Contains("http://") || entry1.Text.Contains("https://")))
         {
-            webView[notebook1.Page].LoadUri(entry1.Text); 
+            webView[notebook1.Page].LoadUri(entry1.Text);
         }
         else if (entry1.Text.Contains("."))
         {
@@ -209,9 +211,9 @@ public partial class MainWindow : Gtk.Window
             SavePages();
         }
         Application.Quit();
-        
+
     }
-    
+
     protected void Open(object sender, EventArgs e)
     { //Opel the fayel (No offense Opel buyers)
         string url;
@@ -335,10 +337,11 @@ public partial class MainWindow : Gtk.Window
         //If this can be called a web browser...
         about.ProgramName = "Greending Web Browser";
         //Fun facc: 私のお尻 means "My butt" in Japanese
-        string[] authors = { "DisableGraphics", "私のお尻" };
+        string[] authors = { "DisableGraphics"};
         about.Authors = authors;
         about.Artists = authors;
-        
+        about.Website = "https://github.com/DisableGraphics/zGreending";
+
         //Bicos dis program don't worcc correccly
         about.Version = "Version A_01";
         Pixbuf icon = new Pixbuf(working_dir + "icons/icon.png");
@@ -362,7 +365,7 @@ public partial class MainWindow : Gtk.Window
 
         Label labl = new Label("Tab " + Convert.ToString(newtab + 1));
         notebook1.InsertPage(webView[newtab], labl, newtab);
-        
+
         webView[newtab].Show();
         if (url != "default")
         {
@@ -395,7 +398,7 @@ public partial class MainWindow : Gtk.Window
         notebook1.RemovePage(notebook1.Page);
         webView.Remove(webView[pos]);
         RefreshTabNames();
-        if(webView.Count > 0)
+        if (webView.Count > 0)
         {
             entry1.Text = webView[notebook1.Page].Uri;
         }
@@ -410,7 +413,7 @@ public partial class MainWindow : Gtk.Window
     void SavePages()
     {
         File.Delete(working_dir + "conf/pages");
-        for(int i = 0; i < notebook1.NPages; i++)
+        for (int i = 0; i < notebook1.NPages; i++)
         {
             File.WriteAllText(working_dir + "conf/pages", webView[i].Uri);
         }
@@ -435,5 +438,48 @@ public partial class MainWindow : Gtk.Window
     void Loading()
     {
 
+    }
+
+    protected void Donations(object sender, EventArgs e)
+    {
+        VBox bocs = new VBox();
+        donate_dialog.Add(bocs);
+        VBox bocs2 = new VBox();
+
+        Label description = new Label("This project is entirely funded by donations.\nIf you want to donate, we'll kindly accept:");
+
+        Label patreon = new Label("Patreon");
+        
+        patreon.Markup = "<a href ='https://www.patreon.com/DisableGraphics' title =''>Patreon</a>";
+
+        Label bitcoin = new Label("Bitcoin: bc1q8u47hfu9s2zm2hr8gct4jdhl3mxy64mz6jznjg");
+        bitcoin.Selectable = true;
+
+        Label verge = new Label("Verge: DKww4JzvC7kuVKfyUfoxkUttbiKDrY6Pdk");
+        verge.Selectable = true;
+
+        bocs.PackEnd(bocs2, true, true, 0);
+
+        bocs.PackStart(description, true, true, 0);
+
+        bocs.PackStart(patreon, true, true, 0);
+
+        bocs2.PackStart(bitcoin, true, true, 5);
+
+        bocs2.PackStart(verge, true, true, 5);
+
+        donationCancelButton.Clicked += this.CancelDonation;
+
+        bocs2.PackEnd(donationCancelButton, true, true, 5);
+
+        donate_dialog.Resize(320, 240);
+
+        donate_dialog.SetIconFromFile(working_dir + "icons/icon.png");
+
+        donate_dialog.ShowAll();
+    }
+    void CancelDonation(object sender, EventArgs e)
+    {
+        donate_dialog.Hide();
     }
 }

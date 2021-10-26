@@ -50,6 +50,12 @@
         <property name="ShortLabel" translatable="yes">About</property>
         <signal name="Activated" handler="About" />
       </action>
+      <action id="DonationsAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Donations</property>
+        <property name="ShortLabel" translatable="yes">Donations</property>
+        <signal name="Activated" handler="Donations" />
+      </action>
     </action-group>
     <property name="MemberName" />
     <property name="Title" translatable="yes">Greending</property>
@@ -72,6 +78,7 @@
               </node>
               <node type="Menu" action="HelpAction">
                 <node type="Menuitem" action="AboutAction" />
+                <node type="Menuitem" action="DonationsAction" />
               </node>
             </node>
           </widget>
@@ -243,17 +250,7 @@
                       </packing>
                     </child>
                     <child>
-                      <widget class="Gtk.HScrollbar" id="hscrollbar2">
-                        <property name="MemberName" />
-                        <property name="Upper">100</property>
-                        <property name="PageIncrement">10</property>
-                        <property name="PageSize">10</property>
-                        <property name="StepIncrement">1</property>
-                      </widget>
-                      <packing>
-                        <property name="Position">2</property>
-                        <property name="AutoSize">True</property>
-                      </packing>
+                      <placeholder />
                     </child>
                   </widget>
                   <packing>
