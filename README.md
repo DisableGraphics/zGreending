@@ -16,6 +16,9 @@ A basic browser but usable for everyday tasks focused on speed.
     - 3: Double click on the run.sh file and enjoy!
   </ul>
   
+# Troubleshooting
+  - If the icons are rendered as squares, please install <code>noto-fonts</code> or another Unicode-complete font
+  
 # Donations:
 This project is entirely driven by donations. If you want to donate, we accept:
   - Patreon: https://www.patreon.com/DisableGraphics
