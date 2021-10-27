@@ -23,7 +23,7 @@ There is no history in zGreending, protecting you from onlookers that want to kn
 ![canYouGuessWatsGoingOnOnTheOtherTabs](https://user-images.githubusercontent.com/48135147/139009470-32918ac9-8cc1-47d6-b409-acaaefcb2f4c.png)
 The history button/option is nowhere to be found. That's because it doesn't exist.
 
-The Download manager is inexistent mostly because of the dangers of it. The Download manager also reveals crucial information about the user. That's why there's no Download manager in zGreending
+The Download manager is inexistent mostly because of its dangers. The Download manager also reveals crucial information about the user. That's why there's no Download manager in zGreending
 
 # Installation guide
   <b>Easiest:</b>
