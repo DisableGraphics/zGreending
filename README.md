@@ -1,5 +1,29 @@
 # zGreending
-A basic browser but usable for everyday tasks focused on speed.
+The browser that protects you from onlookers 
+
+# Can you guess what's going on on the other tabs?
+
+![canYouGuessWatsGoingOnOnTheOtherTabs](https://user-images.githubusercontent.com/48135147/139009470-32918ac9-8cc1-47d6-b409-acaaefcb2f4c.png)
+
+Of course not! Therefore, no one does!
+
+If someone sees your tabs (even accidentally) on Chrome or Firefox, this reveals tons of unnecesary information
+
+zGreending does <b>not</b> reveal this information, with its numerated tabs
+<br>
+
+Even the Description in the taskbar can reveal unnecesary information to others
+
+zGreending only displays "Greending" on the taskbar
+
+![greendingTaskBer](https://user-images.githubusercontent.com/48135147/139073120-7922fdeb-04f0-4e37-8424-cb4679f82fd7.png)
+
+There is no history in zGreending, protecting you from onlookers that want to know what you search
+
+![canYouGuessWatsGoingOnOnTheOtherTabs](https://user-images.githubusercontent.com/48135147/139009470-32918ac9-8cc1-47d6-b409-acaaefcb2f4c.png)
+The history button/option is nowhere to be found. That's because it doesn't exist.
+
+The Download manager is inexistent mostly because of the dangers of it. The Download manager also reveals crucial information about the user. That's why there's no Download manager in zGreending
 
 # Installation guide
   <b>Easiest:</b>
