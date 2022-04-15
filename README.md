@@ -1,3 +1,6 @@
+# Abandon notice
+This project is currently abandoned. <a href=https://github.com/DisableGraphics/greending-ng> Please take a look at its sucessor </a>
+
 # zGreending
 The browser that protects you from onlookers 
 
